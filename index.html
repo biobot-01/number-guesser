@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Number Guesser | JavaScript</title>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
+</head>
+<body>
+  <header class="hero is-primary">
+    <div class="hero-body">
+      <div class="container">
+        <h1 class="title">Number Guesser Game</h1>
+      </div>
+    </div>
+  </header>
+
+  <section class="section has-background-grey-dark">
+    <div class="container">
+      <div class="columns">
+        <div class="column">
+          <div class="box game">
+            <div class="content">
+              <p>Guess a number between <span class="min-num"></span> &#38; <span class="max-num"></span></p>
+            </div>
+
+            <div class="field is-grouped">
+              <div class="control is-expanded">
+                <input class="input" type="number" name="guessInput" id="guessInput" placeholder="Enter a number between 1 & 10">
+              </div>
+
+              <div class="control">
+                <button class="button is-info" id="guessButton" type="submit">Guess</button>
+              </div>
+            </div>
+
+            <div class="notification is-hidden"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script src="app.js"></script>
+</body>
+</html>
