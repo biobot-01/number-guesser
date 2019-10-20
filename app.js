@@ -8,7 +8,7 @@
 // Game values
 let min = 1;
 let max = 10;
-let winningNumber = 2;
+let winningNumber = getRandomNumber(min, max);
 let guessesLeft = 3;
 // UI elements
 const game = document.querySelector('.box.game');
@@ -20,6 +20,13 @@ const notification = document.querySelector('.notification');
 // Assign UI min & max
 minNumber.textContent = min;
 maxNumber.textContent = max;
+
+// Play again event listener
+game.addEventListener('mousedown', function(e) {
+  if (e.target.id === 'playAgainButton') {
+    location.reload();
+  }
+});
 
 // Listen for guess
 guessButton.addEventListener('click', function() {
@@ -74,6 +81,14 @@ function gameOver(won, message) {
   guessInput.classList.add(type);
   // Set message
   setMessage(message, type);
+  // Play again?
+  guessButton.textContent = 'Play Again?';
+  guessButton.id = 'playAgainButton';
+}
+
+// Get random number
+function getRandomNumber(min, max) {
+  return Math.floor(Math.random() * (max - min + 1) + min);
 }
 
 // Set message
